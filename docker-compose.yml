@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  backend:
+    image: vikramm0007/contact-app-backend:1.0
+    container_name: contact-backend
+    ports:
+      - "5000:5000"
+    restart: always
+
+  frontend:
+    image: vikramm0007/contact-app-frontend:1.0
+    container_name: contact-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
